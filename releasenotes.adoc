@@ -1,0 +1,43 @@
+== Release notes
+
+=== 1.3.1
+
+* Fix for missing upcaster in client
+* Resolved high memory consumption in EventBuffer when event stream was closed by client
+* Performance improvement in readEvents in client
+
+=== 1.3
+
+* New AxonFramework 3.3 operations implemented (createHeadToken, createTailToken and createTokenAt)
+* Fix in tracking event stream (stream stopped under heavy load when processor could not keep up)
+
+=== 1.2.3:
+
+* Platform API (gRPC) for integration with AxonHub
+* Commit time for append events events configurable
+
+=== 1.2:
+
+* Executables no longer contain version number in filename.
+* Enterprise edition features (multi-tier storage, server-side encryption of data at rest)
+
+=== 1.1:
+
+* Ad-hoc query on AxonDB
+
+* Authentication on AxonDB web pages
+
+* Properties file renamed from application.properties to axoniq.properties.
+
+* Default http port changed to 8023
+
+* Look and feel update for web pages
+
+=== Known issues
+
+* Swagger doesn't work in conjunction with the streams being returned. The swagger
+HTML page for GET /v1/events without an aggregateId does not return as this returns
+an event stream. This is a limitation in Swagger-UI which only effects manual access
+for testing purposes.
+
+
